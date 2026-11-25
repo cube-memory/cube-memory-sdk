@@ -33,4 +33,6 @@ Add to your `.mcp.json` (Claude Code, Cursor, Windsurf, Zed):
 }
 ```
 
+The local server forwards to the hosted endpoint by default (proxy mode, v2.0+), so both setups expose the same tools. Add `"CM_PROXY": "0"` to `env` to use the built-in fixed tool list instead.
+
 Get your free key at https://cubememory.com.br

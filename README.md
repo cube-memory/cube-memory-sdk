@@ -82,7 +82,15 @@ Drop this into your Claude Code / Cursor / Windsurf `.mcp.json`:
 }
 ```
 
-Now your AI has `search_memory`, `store_memory`, `search_notes` and `get_note` — automatically.
+Now your AI has the full Cube Memory toolset — automatically:
+
+- **Memory:** `search_memory`, `search_context`, `store_memory`, `get_memory`, `list_memories`
+- **Documents & indexes:** `list_indexes`, `get_document_chunk`, `get_document_full`, `query_table_index` (deterministic analysis over tabular data)
+- **Notes:** `search_notes`, `get_note`
+- **Code:** `search_code`, `map_code`, `get_symbol`, `get_symbol_refs`
+- **Synapses:** `list_synapses`, `get_synapse`
+
+Search is exact hybrid retrieval, tolerant to missing accents and typos.
 
 ## Why Cube Memory
 
@@ -115,7 +123,7 @@ reply = mem.chat(
 ## Files
 
 - [`cube_memory.py`](cube_memory.py) — the client (only dependency: `requests`)
-- [`cube_memory_mcp.py`](cube_memory_mcp.py) — stdio MCP server for local clients. **Standard library only** (urllib) — no dependencies, and nothing is installed at import time. Tools: `search_memory`, `fetch_memory`, `store_memory`, `list_memory`, `forget_memory` (`list_memories` is accepted as an alias). Note this is a different surface from the hosted `/v1/mcp` endpoint above, which exposes `search_memory`, `store_memory`, `list_memories`, `search_notes`, `get_note`.
+- [`cube_memory_mcp.py`](cube_memory_mcp.py) — stdio MCP server for local clients. **Standard library only** (urllib) — no dependencies, and nothing is installed at import time. Since v2.0 it runs in **proxy mode** by default: `initialize`, `tools/list` and `tools/call` are forwarded to the hosted `/v1/mcp` endpoint, so local clients get exactly the same tools as the hosted connector. Set `CM_PROXY=0` to use the built-in fixed tool list (`search_memory`, `search_context`, `fetch_memory`, `store_memory`, `list_memory`, `forget_memory`, `search_code`, `map_code`, `get_symbol`, `get_symbol_refs`; `list_memories` is accepted as an alias).
 - [`examples/`](examples/) — OpenAI, Anthropic, and MCP setup
 
 ## Benchmark
