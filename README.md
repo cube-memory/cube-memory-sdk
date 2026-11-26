@@ -20,6 +20,7 @@ LLM you connect (via SDK or MCP) reads and writes the same persistent context.
 [![Get a free key](https://img.shields.io/badge/get-free%20key-6366f1)](https://cubememory.com.br)
 [![MCP](https://img.shields.io/badge/MCP-native-06b6d4)](https://cubememory.com.br)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Follow on X](https://img.shields.io/badge/follow-%40devcubememory-000000?logo=x)](https://x.com/devcubememory)
 
 ---
 
@@ -138,4 +139,4 @@ MIT — the client SDK is open. The hosted engine is proprietary.
 
 ---
 
-Built by [cubememory.com.br](https://cubememory.com.br) · memory that any LLM can hold.
+Built by [cubememory.com.br](https://cubememory.com.br) · memory that any LLM can hold. · Follow [@devcubememory](https://x.com/devcubememory) on X.
